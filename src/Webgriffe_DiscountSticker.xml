@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Webgriffe_DiscountSticker>
+            <active>true</active>
+            <codePool>community</codePool>
+            <depends>
+                <Mage_Catalog/>
+                <Mage_Tax/>
+
+            </depends>
+        </Webgriffe_DiscountSticker>
+    </modules>
+</config>

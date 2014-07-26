@@ -1,0 +1,6 @@
+<?php /** @var $this Webgriffe_DiscountSticker_Block_DiscountSticker */?>
+<?php if ($this->canShowSticker()): ?>
+    <div class="discount-sticker">
+        -<?php echo $this->getDiscountRate() ?>%
+    </div>
+<?php endif; ?>
