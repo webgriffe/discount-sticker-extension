@@ -24,4 +24,15 @@ class Webgriffe_DiscountSticker_Test_Block_DiscountSticker extends EcomDev_PHPUn
 
         $this->assertEquals(20, $discountSticker->setProduct($product)->getDiscountRate());
     }
+
+    public function testGetDiscountRateShouldReturnZeroWhenRegularPriceIsZero()
+    {
+        $product = new Mage_Catalog_Model_Product();
+        $product->setPrice(0);
+        $product->setFinalPrice(80);
+
+        $discountSticker = new Webgriffe_DiscountSticker_Block_DiscountSticker();
+
+        $this->assertEquals(0, $discountSticker->setProduct($product)->getDiscountRate());
+    }
 } 

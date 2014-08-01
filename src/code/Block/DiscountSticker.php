@@ -40,8 +40,13 @@ class Webgriffe_DiscountSticker_Block_DiscountSticker extends Mage_Core_Block_Te
 
             $_store = $this->_product->getStore();
             $_convertedPrice = $_store->roundPrice($_store->convertPrice($this->_product->getPrice()));
-            $_convertedFinalPrice = $_store->roundPrice($_store->convertPrice($this->_product->getFinalPrice()));
             $_regularPrice = $_taxHelper->getPrice($this->_product, $_convertedPrice, $_simplePricesTax);
+
+            if ($_regularPrice == 0) {
+                return 0;
+            }
+
+            $_convertedFinalPrice = $_store->roundPrice($_store->convertPrice($this->_product->getFinalPrice()));
             $_finalPrice = $_taxHelper->getPrice($this->_product, $_convertedFinalPrice);
 
             $this->_discountRate = round((($_regularPrice - $_finalPrice) / $_regularPrice) * 100);
