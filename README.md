@@ -10,11 +10,9 @@ Simply install the exentions with `modman` or `composer`. Then you can add the d
 
 ```
 <?php
-  $this
+  echo $this
 	->getLayout()
-    ->createBlock(
-      Webgriffe_DiscountSticker_Block_DiscountSticker::BLOCK_ALIAS
-	)
+    ->createBlock(Webgriffe_DiscountSticker_Block_DiscountSticker::BLOCK_ALIAS)
     ->setProduct($_product)
     ->toHtml();
 ?>
