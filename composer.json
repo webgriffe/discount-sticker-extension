@@ -18,8 +18,7 @@
         "magento-hackathon/magento-composer-installer": "*"
     },
     "require-dev": {
-        "ivanchepurnyi/ecomdev_phpunit": "dev-dev",
-        "phpunit/phpunit": "3.*"
+        "ecomdev/ecomdev_phpunit": "dev-dev"
     },
     "extra": {
         "magento-root-dir": "magento"
